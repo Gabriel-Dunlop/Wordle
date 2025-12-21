@@ -16,8 +16,8 @@ def readFromFile():
 
 def board():
     board =["#####","#####","#####","#####","#####","#####"]
-    # display_board = '\n'.join(str(line)for line in board)
-    return board
+    display_board = '\n'.join(str(line)for line in board)
+    return list(display_board)
     
 # randomWord = readFromFile()
 # userInput(randomWord)
@@ -29,9 +29,8 @@ emptyString = ""
 j = 0
 for i in range(0, len(userWord)):
     if userWord[i] == randomWord[i]:
-        testing[j][i] == randomWord[i]
-        print(testing[j][i])
-        j += 1
+        testing[i] = randomWord[i]
+        print(testing[i])
         
         emptyString += randomWord[i]
         continue      
