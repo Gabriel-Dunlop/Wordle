@@ -20,15 +20,21 @@ test = "test"
 userWord = "spank"
 randomWord = "prank"
 emptyString = ""
+
 for i in range(0, len(userWord)):
     if userWord[i] == randomWord[i]:
+        # board[i].replace()
         emptyString += randomWord[i]
         continue      
     if userWord[i] in randomWord:
         print("it contains!")
     if userWord[i] not in randomWord:
         print("does not contain!")
-print(emptyString)
+# print(emptyString)
 
+def board():
+    board =["#####","#####","#####","#####","#####","#####"]
+    for line in board[]
+        print(line)
 
-
+board()
