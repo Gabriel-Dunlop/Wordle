@@ -30,11 +30,11 @@ for i in range(0, len(userWord)):
         print("it contains!")
     if userWord[i] not in randomWord:
         print("does not contain!")
-# print(emptyString)
 
 def board():
     board =["#####","#####","#####","#####","#####","#####"]
-    for line in board[]
-        print(line)
-
-board()
+    display_board = '\n'.join(str(line)for line in board)
+    return display_board
+    
+testing = board()
+print(testing)
