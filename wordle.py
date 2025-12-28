@@ -1,4 +1,5 @@
 import random
+from tkinter.constants import WORD
 
 def userInput(randomWord):
     userWord = input("What is Todays Word? ")
@@ -20,24 +21,33 @@ def board():
     return(board_rows)
 
 testing = board()
-test = "test"
-userWord = input("Guess the word: ")
+file = open(WORD)
 randomWord = "prank"
 emptyString = ""
 j = 0
-
+z = 0
+  
 def checkword(userWord, randomWord):
     if userWord == randomWord:
         return "You win!"
+    return None
 
-result = checkword(userWord, randomWord)
-print(result)
-for i in range(0, len(userWord)):
-    if userWord[i] == randomWord[i]:
-        testing[j][i] = randomWord[i]
-        print(testing[j][i])
-        continue      
-    if userWord[i] in randomWord:
-        print("it contains!")
-    if userWord[i] not in randomWord:
-        print("does not contain!")
+while z < 6:
+    userWord = input("Guess the word: ")
+    result = checkword(userWord, randomWord)
+    if result == "You win!":
+        print(result)
+        break
+    for i in range(0, len(userWord)):
+        if userWord[i] == randomWord[i]:
+            testing[j][i] = randomWord[i]
+            emptyString += userWord[i]
+            print(testing[j][i])
+            continue      
+        if userWord[i] in randomWord:
+            print("it contains!")
+        if userWord[i] not in randomWord:
+            print("does not contain!")
+    print(emptyString)
+    j += 1
+    z += 1
