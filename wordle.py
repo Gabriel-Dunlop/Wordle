@@ -19,14 +19,19 @@ def board():
     board_rows = [list(row) for row in board]
     return(board_rows)
 
-# randomWord = readFromFile()
-# userInput(randomWord)
 testing = board()
 test = "test"
-userWord = "spank"
+userWord = input("Guess the word: ")
 randomWord = "prank"
 emptyString = ""
 j = 0
+
+def checkword(userWord, randomWord):
+    if userWord == randomWord:
+        return "You win!"
+
+result = checkword(userWord, randomWord)
+print(result)
 for i in range(0, len(userWord)):
     if userWord[i] == randomWord[i]:
         testing[j][i] = randomWord[i]
